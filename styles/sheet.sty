@@ -1,0 +1,43 @@
+% TITLE
+\newcommand{\CustomTitle}[3]{{\noindent\LARGE #1}\vspace{2mm} \\{\large #2\\#3}}
+
+% FONT SETUP
+\usepackage{extsizes}
+\setlist{nolistsep}
+\setlength\parindent{0pt}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\setlist[description]{leftmargin=0.5cm}
+
+% SECTION STYLING
+\usepackage{sectsty}
+\sectionfont{\normalsize\sectionrule{0pt}{0pt}{-5pt}{0.8pt}}
+\subsectionfont{\normalsize}
+\subsubsectionfont{\normalsize}
+
+% LAYOUT
+\usepackage{geometry}
+\geometry{
+    a4paper,
+	left=7mm,
+	right=7mm,
+	top=7mm,
+	bottom=15mm,
+    landscape
+}
+
+% HEADERS AND FOOTERS
+\pagestyle{fancy}
+\lhead{}\chead{}\rhead{}\lfoot{{\tiny Compiled: \today}}\cfoot{}\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+    
+    
+% COLUMNS
+\usepackage{multicol}
+\definecolor{sepcolor}{RGB}{200, 200, 200}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{sepcolor}}
+
+
+
+

@@ -1,0 +1,30 @@
+
+% TITLE
+\usepackage{tabularx, ragged2e}
+\newcommand{\CustomTitle}[2]{
+    \begin{minipage}[]{0.7\textwidth}
+        \scshape
+        \LARGE{#1}\par \vspace{0.1em}
+        \normalsize{#2}\vspace{0.6em}
+        \flushleft
+        \footnotesize
+        \begin{tabularx}{8.3cm}{X l}
+            Author:  & Magnus Siegumfeldt\\
+            Student Number: & s204472\\
+            Date: & \Today\\
+            University: & Technical University of Denmark\\
+        \end{tabularx}
+    \end{minipage}%
+    \vspace{0.6cm}\\
+    \rule{\textwidth}{1px}
+    \vspace{0.2cm}
+}
+
+% LAYOUT
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=30mm,
+    right=30mm,
+    top=30mm,
+}

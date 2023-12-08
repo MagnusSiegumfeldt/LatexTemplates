@@ -1,0 +1,82 @@
+% GENERAL
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage[style=ddmmyyyy,yearmonthsep=/,monthdaysep=/]{datetime2}
+
+\usepackage{blindtext}
+
+% COLORS
+\usepackage{color, xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+
+% FIGURES
+\usepackage{float}
+
+% TABLES
+\usepackage{multirow}
+
+% PSEUDOCODE
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% IMAGES
+\usepackage{graphicx}
+\graphicspath{ {./figures} }
+\usepackage{subcaption}
+
+% MATH
+\usepackage{mathtools}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\renewenvironment{proof}{{\noindent\bfseries Proof: }}{\qed}
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\NP}{\mathcal{NP}}
+\newcommand{\RP}{\mathcal{RP}}
+\newcommand{\ZPP}{\mathcal{ZPP}}
+\newcommand{\BPP}{\mathcal{BPP}}
+
+% LISTS
+\usepackage{enumitem}
+
+% HEADERS AND FOOTERS
+\usepackage{fancyhdr}
+
+% LISTINGS
+\usepackage{listings}
+
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                                     
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    frame=lines,
+    stringstyle=\color{blue},
+    keywordstyle=\color{blue},
+    commentstyle=\color{codegreen}
+}
+\lstset{style=mystyle}
+
+% REFERENCES
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+\usepackage{cleveref}
+\usepackage{lastpage}

@@ -9,10 +9,17 @@
 \setlist[description]{leftmargin=0.5cm}
 
 % SECTION STYLING
-\usepackage{sectsty}
-\sectionfont{\normalsize\sectionrule{0pt}{0pt}{-5pt}{0.8pt}}
-\subsectionfont{\normalsize}
-\subsubsectionfont{\normalsize}
+%\usepackage{sectsty}
+%\sectionfont{\sffamily\normalsize\sectionrule{0pt}{0pt}{-5pt}{0.8pt}}
+%\subsectionfont{\sffamily\normalsize}
+%\subsubsectionfont{\sffamily\normalsize}
+
+\usepackage{titlesec}
+\titleformat{\section}{\sffamily\normalsize\bfseries}{\thesection}{1em}{}[\titlerule\vspace*{-4pt}]
+\titleformat{\subsection}{\sffamily\normalsize\bfseries}{\thesubsection}{1em}{}[\vspace*{-2pt}]
+\titleformat{\subsubsection}{\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+
 
 % LAYOUT
 \usepackage{geometry}
@@ -32,11 +39,30 @@
 \renewcommand{\footrulewidth}{0pt}
     
     
+% EQUATION SPACING
+\AtBeginDocument{
+	\addtolength{\abovedisplayskip}{-5pt}
+	\addtolength{\abovedisplayshortskip}{-5pt}
+	\addtolength{\belowdisplayskip}{-5pt}
+	\addtolength{\belowdisplayshortskip}{-5pt}
+}
+
 % COLUMNS
 \usepackage{multicol}
 \definecolor{sepcolor}{RGB}{200, 200, 200}
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{sepcolor}}
+
+% LISTS
+\usepackage{enumitem}
+\setlist[description]{%
+    font={\bfseries\sffamily\itshape}, % set the label font
+    labelindent = 0pt,
+	leftmargin = 10pt,
+}
+\setlist[itemize]{%
+    itemsep=0pt
+}
 
 
 

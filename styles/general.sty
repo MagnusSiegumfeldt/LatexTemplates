@@ -1,15 +1,18 @@
 % GENERAL
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{lmodern}
 
 \usepackage[style=ddmmyyyy,yearmonthsep=/,monthdaysep=/]{datetime2}
 
 \usepackage{blindtext}
+\usepackage{todonotes}
 
 % COLORS
 \usepackage{color, xcolor}
 \definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codered}{RGB}{230, 0, 0}
+
+
 
 % FIGURES
 \usepackage{float}
@@ -20,7 +23,7 @@
 
 % PSEUDOCODE
 \usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocodex}
 
 % IMAGES
 \usepackage{graphicx}
@@ -32,18 +35,28 @@
 \usepackage{amsmath, amssymb, amsthm}
 
 \newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
+\usepackage{thmtools}
 
-\renewenvironment{proof}{{\noindent\bfseries Proof: }}{\qed}
+\declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmstyle}
+\declaretheorem[style=thmstyle, name=Theorem, numberwithin=section]{thm}
+\declaretheorem[style=thmstyle, name=Lemma, sibling=thm]{lem}
+\declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{prfstyle}
+\declaretheorem[numbered=no, qed=\qedsymbol, style=prfstyle, name=Proof]{prf}
+\declaretheorem[numbered=no, style=prfstyle, name=Note]{note}
 
+
+% COMMANDS
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\ceil}[1]{\lceil #1 \rceil}
 \newcommand{\abs}[1]{\lvert #1 \rvert}
 \newcommand{\N}{\mathbb{N}}
-\newcommand{\NP}{\mathcal{NP}}
-\newcommand{\RP}{\mathcal{RP}}
-\newcommand{\ZPP}{\mathcal{ZPP}}
-\newcommand{\BPP}{\mathcal{BPP}}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\polylog}{\ensuremath{\text{polylog }}}
+
+\renewcommand{\tt}[1]{\texttt{#1}}
+\renewcommand{\sf}[1]{\textsf{#1}}
+\renewcommand{\it}[1]{\textit{#1}}
+\renewcommand{\t}[1]{\ensuremath{\text{#1}}}
 
 % LISTS
 \usepackage{enumitem}
@@ -54,7 +67,7 @@
 % LISTINGS
 \usepackage{listings}
 
-\lstdefinestyle{mystyle}{
+\lstdefinestyle{custom}{
     basicstyle=\ttfamily\scriptsize,
     breakatwhitespace=false,         
     breaklines=true,                 
@@ -66,11 +79,11 @@
     showtabs=false,                  
     tabsize=4,
     frame=lines,
-    stringstyle=\color{blue},
+    stringstyle=\color{codered},
     keywordstyle=\color{blue},
     commentstyle=\color{codegreen}
 }
-\lstset{style=mystyle}
+\lstset{style=custom}
 
 % REFERENCES
 \usepackage[colorlinks]{hyperref}

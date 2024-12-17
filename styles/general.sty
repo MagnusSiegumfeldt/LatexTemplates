@@ -4,6 +4,9 @@
 
 \usepackage[style=ddmmyyyy,yearmonthsep=/,monthdaysep=/]{datetime2}
 
+\usepackage{ifthen}
+
+
 \usepackage{blindtext}
 \usepackage{todonotes}
 
@@ -43,6 +46,34 @@
 \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{prfstyle}
 \declaretheorem[numbered=no, qed=\qedsymbol, style=prfstyle, name=Proof]{prf}
 \declaretheorem[numbered=no, style=prfstyle, name=Note]{note}
+
+
+
+\newenvironment{problem}[2][]
+    {
+    \begin{description}  
+        \item[Problem\ifthenelse{\equal{#1}{}}{.}{ #1.}\ifthenelse{\equal{#2}{}}{}{ (#2)}
+        ]
+    }{
+        \end{description}
+    }
+\newenvironment{question}[2][]
+    {
+    \begin{description}  
+        \item[Question\ifthenelse{\equal{#1}{}}{.}{ #1.}\ifthenelse{\equal{#2}{}}{}{ (#2)}
+        ]
+    }{
+        \end{description}
+    }
+\newenvironment{solution}
+    {\begin{description}
+        \item[Solution.]
+    }
+    {
+    \end{description}
+    }
+
+
 
 
 % COMMANDS
